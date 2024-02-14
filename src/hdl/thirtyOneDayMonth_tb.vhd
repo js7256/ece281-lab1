@@ -56,7 +56,7 @@ end thirtyOneDayMonth_tb;
 architecture test_bench of thirtyOneDayMonth_tb is 
 	
   -- declare the component of your top-level design unit under test (UUT) (looks very similar to entity declaration)
-  component thirtyoneDayMonth is
+  component thirtyOneDayMonth is
     port(
 	i_A : in std_logic;
 	i_B : in std_logic;
@@ -68,7 +68,7 @@ architecture test_bench of thirtyOneDayMonth_tb is
 
   -- declare any additional components required
   
-  signal w_sw : std_logic_vector (3 downto 0):= (others=> '0');
+  signal w_sw : std_logic_vector (3 downto 0) := (others => '0');
   signal w_Y : std_logic := '0';
 
   
@@ -94,7 +94,35 @@ begin
             assert w_Y = '0' report "error on x0" severity failure;
         w_sw <= x"1"; wait for 10 ns;
             assert w_Y = '1' report "error on Jan" severity failure;   
-
+        w_sw <= x"2"; wait for 10 ns;
+            assert w_Y = '0' report "error on Feb" severity failure;
+        w_sw <= x"3"; wait for 10 ns;
+            assert w_Y = '1' report "error on Mar" severity failure;
+        w_sw <= x"4"; wait for 10 ns;
+            assert w_Y = '0' report "error on Apr" severity failure;
+        w_sw <= x"5"; wait for 10 ns;
+            assert w_Y = '1' report "error on May" severity failure;
+        w_sw <= x"6"; wait for 10 ns;
+            assert w_Y = '0' report "error on Jun" severity failure;
+        w_sw <= x"7"; wait for 10 ns;
+            assert w_Y = '1' report "error on Jul" severity failure;
+        w_sw <= x"8"; wait for 10 ns;
+            assert w_Y = '1' report "error on Aug" severity failure;
+        w_sw <= x"9"; wait for 10 ns;
+            assert w_Y = '0' report "error on Sep" severity failure;
+        w_sw <= x"a"; wait for 10 ns;
+            assert w_Y = '1' report "error on Oct" severity failure;
+        w_sw <= x"b"; wait for 10 ns;
+            assert w_Y = '0' report "error on Nov" severity failure;
+        w_sw <= x"c"; wait for 10 ns;
+            assert w_Y = '1' report "error on Dec" severity failure;
+        w_sw <= x"d"; wait for 10 ns;
+            assert w_Y = '0' report "error on x13" severity failure;
+        w_sw <= x"e"; wait for 10 ns;
+            assert w_Y = '0' report "error on x14" severity failure;
+        w_sw <= x"f"; wait for 10 ns;
+            assert w_Y = '0' report "error on x15" severity failure;
+        
 		wait; -- wait forever
 	end process;	
 	-----------------------------------------------------	
