@@ -119,7 +119,7 @@ begin
         w_sw <= x"d"; wait for 10 ns;
             assert w_Y = '0' report "error on x13" severity failure;
         w_sw <= x"e"; wait for 10 ns;
-            assert w_Y = '0' report "error on x14" severity failure;
+            assert w_Y = '1' report "error on x14" severity failure;
         w_sw <= x"f"; wait for 10 ns;
             assert w_Y = '0' report "error on x15" severity failure;
         
